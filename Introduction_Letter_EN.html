@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduction Letter — The Liu Family</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --gold: #C5A55A;
+    --gold-light: #E8D5A3;
+    --cream: #FDF8F0;
+    --cream-dark: #F5EDE0;
+    --text: #3A3226;
+    --text-light: #6B5E4F;
+    --accent: #8B6914;
+    --border: #E0D5C0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lora', 'Georgia', serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  .letter-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #FFFFFF;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  /* Top decorative bar */
+  .top-bar {
+    height: 6px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+
+  .letter-body {
+    padding: 60px 70px;
+  }
+
+  /* Title */
+  .letter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text);
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+
+  .title-ornament {
+    text-align: center;
+    color: var(--gold);
+    font-size: 24px;
+    margin-bottom: 30px;
+    letter-spacing: 8px;
+  }
+
+  /* Salutation */
+  .salutation {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  /* Opening paragraph */
+  .opening {
+    font-size: 15px;
+    color: var(--text-light);
+    margin-bottom: 24px;
+    line-height: 1.9;
+  }
+
+  /* Section heading */
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 36px 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Body text */
+  .body-text {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text);
+    margin-bottom: 16px;
+    text-indent: 2em;
+  }
+
+  /* Photo section */
+  .photo-section {
+    margin: 28px 0;
+  }
+
+  .photo-caption {
+    font-size: 13px;
+    color: var(--text-light);
+    font-style: italic;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .photo-grid.single {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 16px auto;
+  }
+
+  .photo-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+    display: block;
+  }
+
+  .photo-full {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .photo-full img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 3px;
+  }
+
+  /* Links */
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--gold);
+    transition: all 0.2s;
+  }
+  a:hover {
+    color: var(--gold);
+  }
+
+  /* Divider */
+  .divider {
+    text-align: center;
+    color: var(--gold);
+    margin: 32px 0;
+    font-size: 18px;
+    letter-spacing: 12px;
+  }
+
+  /* Closing */
+  .closing-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .closing-text {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .greeting {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--text);
+    margin-top: 32px;
+    font-style: italic;
+  }
+
+  .signatures {
+    margin-top: 28px;
+  }
+
+  .signature-line {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .date-line {
+    font-size: 14px;
+    color: var(--text-light);
+    text-align: right;
+    margin-top: 16px;
+    font-style: italic;
+  }
+
+  /* Family name badge */
+  .family-badge {
+    display: inline-block;
+    background: var(--cream-dark);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 24px;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .family-badge .names {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: var(--text);
+  }
+
+  .family-badge .subtitle {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 4px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .letter-body {
+      padding: 36px 28px;
+    }
+    .photo-grid {
+      grid-template-columns: 1fr;
+    }
+    .letter-title {
+      font-size: 22px;
+    }
+  }
+
+  /* Bottom decorative bar */
+  .bottom-bar {
+    height: 6px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+</style>
+</head>
+<body>
+
+<div class="letter-wrapper">
+  <div class="top-bar"></div>
+
+  <div class="letter-body">
+
+    <h1 class="letter-title">Introduction Letter</h1>
+    <div class="title-ornament">✦ ✦ ✦</div>
+
+    <p class="salutation">Dear Kisi Family,</p>
+
+    <p class="opening">May you all be in God's peace and prosperity! It is a great joy to meet you in the Lord. Thank you so much for the wonderful conversation yesterday, especially for making time to meet with us — we are deeply grateful.</p>
+
+    <p class="opening">We are so glad to have such a community in Austria, bringing children to experience and spread the Christian faith through musicals, dance, song, and puppetry. Thank you for your 32 years of continuous faith formation for children and families.</p>
+
+    <div class="divider">· · ·</div>
+
+    <!-- Personal Introduction -->
+    <h2 class="section-heading">About Us</h2>
+
+    <p class="body-text">My name is <strong>Jenny Jiang</strong>, age 40, from China. Baptized since childhood, I am an English teacher and a children's catechist.</p>
+
+    <p class="body-text">My husband is <strong>Stephen Liu</strong>, age 38, also baptized since childhood, an IT engineer.</p>
+
+    <p class="body-text">Our son <strong>Micheal</strong> (13), our eldest daughter <strong>Kandy</strong> (11), and our youngest daughter <strong>Teresa</strong> (8) are all currently studying in Austria. After a challenging language transition, they have grown to love it here. Every day we attend Mass together and read Scripture during evening prayer. They deeply hope to continue their studies in Austria after my graduation — which is why we would like to stay, as back in China, children are no longer allowed to enter churches.</p>
+
+    <p class="body-text">I will be completing my <strong>MMF (Master of Marriage and Family)</strong> degree on June 20th.</p>
+
+    <!-- Family Photo (Image 1 & 2) -->
+    <div class="photo-section">
+      <div class="photo-grid">
+        <img src="images/image1.jpeg" alt="The Liu family portrait">
+        <img src="images/image2.jpeg" alt="The Liu family portrait">
+      </div>
+      <p class="photo-caption">The Liu Family</p>
+    </div>
+
+    <!-- Community Life -->
+    <h2 class="section-heading">Community Life</h2>
+
+    <p class="body-text">My husband and I have been participating in the <strong>CFC (Couples for Christ)</strong> community since 2012. The mission of the community is to renew ourselves, our families, and the face of the world through the Holy Spirit. With the support of our parish priest and the community, my husband and I established a new branch in our parish, growing from 2019 to 2024 to 57 members.</p>
+
+    <p class="body-text">Learn more: <a href="https://couplesforchristglobal.org/" target="_blank">couplesforchristglobal.org</a></p>
+
+    <!-- Beijing CFC Photos (Images 3, 4, 5) -->
+    <h2 class="section-heading" style="font-size:16px; margin-top:24px;">Beijing CFC Community Activities — Pingfang Parish</h2>
+
+    <div class="photo-section">
+      <div class="photo-grid">
+        <img src="images/image3.jpeg" alt="Beijing CFC community activity at Pingfang Parish">
+        <img src="images/image4.jpeg" alt="Beijing CFC community activity at Pingfang Parish">
+      </div>
+      <p class="photo-caption">Beijing Pingfang Parish CFC Community Activities</p>
+    </div>
+
+    <p class="body-text" style="text-indent:0; text-align:center; margin: 20px 0;">
+      <img src="images/image5.png" alt="CFC community gathering" style="max-width:100%; height:auto; border-radius:3px;">
+    </p>
+    <p class="photo-caption">CFC Community Gathering</p>
+
+    <!-- Austria CFC Photos (Images 6, 7) -->
+    <h2 class="section-heading" style="font-size:16px; margin-top:24px;">Life in Austria</h2>
+
+    <p class="body-text">After arriving in Austria, we joined the local CFC branch and continued to participate in community activities.</p>
+
+    <div class="photo-section">
+      <div class="photo-grid">
+        <img src="images/image6.jpeg" alt="CFC community in Austria">
+        <img src="images/image7.jpeg" alt="CFC community in Austria">
+      </div>
+      <p class="photo-caption">CFC Community in Austria</p>
+    </div>
+
+    <!-- Pre-Marriage Training Photos (Images 8, 9) -->
+    <h2 class="section-heading" style="font-size:16px; margin-top:24px;">Pre-Marriage Training Speakers</h2>
+
+    <p class="body-text">Serving as guest speakers together with my husband for the Diocesan Pre-Marriage Training Course in the Beijing Diocese.</p>
+
+    <div class="photo-section">
+      <div class="photo-grid">
+        <img src="images/image8.jpeg" alt="Pre-marriage training session">
+        <img src="images/image9.jpeg" alt="Pre-marriage training session">
+      </div>
+      <p class="photo-caption">Pre-Marriage Training — Beijing Diocese</p>
+    </div>
+
+    <!-- Catechist Work (Image 10) -->
+    <h2 class="section-heading">Children's Catechism Teaching</h2>
+
+    <p class="body-text">As a catechist, I teach children's religious education using materials from the <strong>Dominican Sisters</strong> (CFM Books): <a href="https://www.dominicansisters.net/cfmbooks" target="_blank">dominicansisters.net/cfmbooks</a></p>
+
+    <p class="body-text">During my catechism teaching, I received guidance directly from the authors, along with assistance from others who helped translate the materials into Chinese. I also founded a Catechism Speaker Study Group to train catechists. However, with the intensifying policies of the Chinese government, everything came to a halt. I trust that the Lord has His own plan for all of this.</p>
+
+    <div class="photo-section">
+      <div class="photo-full">
+        <img src="images/image10.png" alt="Children's catechism class">
+      </div>
+      <p class="photo-caption">Children's Catechism Class</p>
+    </div>
+
+    <!-- Notredame de Vie (Images 11, 12) -->
+    <h2 class="section-heading">Notre Dame de Vie (Life of Mary) Community</h2>
+
+    <p class="body-text">Before coming to Austria, we lived in Beijing for 12 years. From 2019 to 2024, I taught children's catechism every Sunday at our parish using curriculum from the <strong>Notre Dame de Vie</strong> (Life of Mary) community, France: <a href="https://www.notredamedevie.org/" target="_blank">notredamedevie.org</a></p>
+
+    <p class="body-text">My husband and I officially joined the Notre Dame de Vie community in 2019 as family cooperators, sharing in its spirituality and charism. The above-mentioned catechism materials were written by members of this community, which allowed us to receive even more of its graces.</p>
+
+    <div class="photo-section">
+      <div class="photo-grid">
+        <img src="images/image11.jpeg" alt="Notre Dame de Vie community">
+        <img src="images/image12.jpeg" alt="Notre Dame de Vie community">
+      </div>
+      <p class="photo-caption">Notre Dame de Vie (Life of Mary) Community</p>
+    </div>
+
+    <!-- CFC Logo (Image 13) -->
+    <div class="photo-section" style="text-align:center; margin:30px 0;">
+      <img src="images/image13.png" alt="CFC Couples for Christ Logo" style="max-width:50%; height:auto; border-radius:3px;">
+      <p class="photo-caption">Couples for Christ — Renewing Families, Renewing the World</p>
+    </div>
+
+    <!-- Closing -->
+    <div class="closing-section">
+      <p class="closing-text">None of the above is meant to boast, but simply to share authentically the graces the Lord has poured out upon our family. We are willing to entrust everything to God, letting the Holy Spirit lead the way.</p>
+
+      <p class="greeting">May you be rich in the Lord's peace!</p>
+
+      <div class="signatures">
+        <p class="signature-line">Jenny Jiang &amp; Stephen Liu</p>
+        <p class="signature-line" style="font-size:14px; font-weight:400; color:var(--text-light);">Micheal &amp; Kandy &amp; Teresa</p>
+      </div>
+
+      <p class="date-line">May 27, 2026</p>
+    </div>
+
+  </div>
+
+  <div class="bottom-bar"></div>
+</div>
+
+</body>
+</html>
