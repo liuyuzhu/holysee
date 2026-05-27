@@ -129,11 +129,35 @@
     margin: 16px auto;
   }
 
-  .photo-grid img {
+  /* Photo table (Word-style table layout) */
+  .photo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+  }
+  .photo-table td {
+    padding: 0;
+    vertical-align: top;
+  }
+  .photo-table img {
     width: 100%;
     height: auto;
-    border-radius: 3px;
     display: block;
+    border-radius: 3px;
+  }
+
+  /* Equal height for paired photos (same row) */
+  .photo-grid.equal-height {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(0, 1fr);
+  }
+  .photo-grid.equal-height img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 3px;
   }
 
   .photo-full {
@@ -243,6 +267,17 @@
     .letter-title {
       font-size: 22px;
     }
+    /* Table responsive */
+    .photo-table,
+    .photo-table tbody,
+    .photo-table tr,
+    .photo-table td {
+      display: block;
+      width: 100% !important;
+    }
+    .photo-table td {
+      padding: 0 0 12px 0;
+    }
   }
 
   /* Bottom decorative bar */
@@ -282,11 +317,18 @@
     <p class="body-text">I will be completing my <strong>MMF (Master of Marriage and Family)</strong> degree on June 20th.</p>
 
     <!-- Family Photo (Image 1 & 2) -->
+    <!-- Word: 50:50 (4150:4150 dxa) -->
     <div class="photo-section">
-      <div class="photo-grid">
-        <img src="images/image1.jpeg" alt="The Liu family portrait">
-        <img src="images/image2.jpeg" alt="The Liu family portrait">
-      </div>
+      <table class="photo-table">
+        <tr>
+          <td style="width: 50%;">
+            <img src="images/image1.jpeg" alt="The Liu family portrait">
+          </td>
+          <td style="width: 50%;">
+            <img src="images/image2.jpeg" alt="The Liu family portrait">
+          </td>
+        </tr>
+      </table>
       <p class="photo-caption">The Liu Family</p>
     </div>
 
@@ -297,14 +339,20 @@
 
     <p class="body-text">Learn more: <a href="https://couplesforchristglobal.org/" target="_blank">couplesforchristglobal.org</a></p>
 
-    <!-- Beijing CFC Photos (Images 3, 4, 5) -->
+    <!-- Beijing CFC Photos (Images 3, 4) -->
     <h2 class="section-heading" style="font-size:16px; margin-top:24px;">Beijing CFC Community Activities — Pingfang Parish</h2>
-
+    <!-- Word: 36.4:63.6 (3018:5282 dxa) -->
     <div class="photo-section">
-      <div class="photo-grid">
-        <img src="images/image3.jpeg" alt="Beijing CFC community activity at Pingfang Parish">
-        <img src="images/image4.jpeg" alt="Beijing CFC community activity at Pingfang Parish">
-      </div>
+      <table class="photo-table">
+        <tr>
+          <td style="width: 36.4%;">
+            <img src="images/image3.jpeg" alt="Beijing CFC community activity at Pingfang Parish">
+          </td>
+          <td style="width: 63.6%;">
+            <img src="images/image4.jpeg" alt="Beijing CFC community activity at Pingfang Parish">
+          </td>
+        </tr>
+      </table>
       <p class="photo-caption">Beijing Pingfang Parish CFC Community Activities</p>
     </div>
 
@@ -318,11 +366,18 @@
 
     <p class="body-text">After arriving in Austria, we joined the local CFC branch and continued to participate in community activities.</p>
 
+    <!-- Word: 38:62 (3152:5148 dxa) -->
     <div class="photo-section">
-      <div class="photo-grid">
-        <img src="images/image6.jpeg" alt="CFC community in Austria">
-        <img src="images/image7.jpeg" alt="CFC community in Austria">
-      </div>
+      <table class="photo-table">
+        <tr>
+          <td style="width: 38%;">
+            <img src="images/image6.jpeg" alt="CFC community in Austria">
+          </td>
+          <td style="width: 62%;">
+            <img src="images/image7.jpeg" alt="CFC community in Austria">
+          </td>
+        </tr>
+      </table>
       <p class="photo-caption">CFC Community in Austria</p>
     </div>
 
@@ -331,11 +386,18 @@
 
     <p class="body-text">Serving as guest speakers together with my husband for the Diocesan Pre-Marriage Training Course in the Beijing Diocese.</p>
 
+    <!-- Word: 50:50 (4150:4150 dxa) -->
     <div class="photo-section">
-      <div class="photo-grid">
-        <img src="images/image8.jpeg" alt="Pre-marriage training session">
-        <img src="images/image9.jpeg" alt="Pre-marriage training session">
-      </div>
+      <table class="photo-table">
+        <tr>
+          <td style="width: 50%;">
+            <img src="images/image8.jpeg" alt="Pre-marriage training session">
+          </td>
+          <td style="width: 50%;">
+            <img src="images/image9.jpeg" alt="Pre-marriage training session">
+          </td>
+        </tr>
+      </table>
       <p class="photo-caption">Pre-Marriage Training — Beijing Diocese</p>
     </div>
 
@@ -360,11 +422,18 @@
 
     <p class="body-text">My husband and I officially joined the Notre Dame de Vie community in 2019 as family cooperators, sharing in its spirituality and charism. The above-mentioned catechism materials were written by members of this community, which allowed us to receive even more of its graces.</p>
 
+    <!-- Word: 49.6:50.4 (4117:4183 dxa) -->
     <div class="photo-section">
-      <div class="photo-grid">
-        <img src="images/image11.jpeg" alt="Notre Dame de Vie community">
-        <img src="images/image12.jpeg" alt="Notre Dame de Vie community">
-      </div>
+      <table class="photo-table">
+        <tr>
+          <td style="width: 49.6%;">
+            <img src="images/image11.jpeg" alt="Notre Dame de Vie community">
+          </td>
+          <td style="width: 50.4%;">
+            <img src="images/image12.jpeg" alt="Notre Dame de Vie community">
+          </td>
+        </tr>
+      </table>
       <p class="photo-caption">Notre Dame de Vie (Life of Mary) Community</p>
     </div>
 
